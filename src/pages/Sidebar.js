@@ -172,6 +172,8 @@ const Sidebar = ({ isOpen, onClose }) => {
               fontSize: "12px",
               textTransform: "none",
               marginBottom: "8px",
+              color: "#914900",
+              border: none
             }}
           >
             {showDescription ? "Read Less" : "Read More"}
