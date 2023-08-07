@@ -47,15 +47,11 @@ body {
 }
 
 .sidebar-button.open {
-  left: calc(39% - 50px);
-  /* Adjust the left position when the sidebar is open */
+  left: calc(40% - 50px);
 }
-
-/* Mobile-responsive styles */
 
 @media (max-width: 600px) {
 
-  /* Reduce the height of the App-logo for smaller screens */
   .App-logo {
     height: 25vmin;
   }

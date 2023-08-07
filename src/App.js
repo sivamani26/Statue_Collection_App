@@ -42,7 +42,7 @@ const App = () => {
   startIcon={isSidebarOpen ? <KeyboardDoubleArrowLeftIcon /> : <KeyboardDoubleArrowRightIcon />}
   style={{
     minWidth: '0',
-    width: '25px',
+    width: '35px',
     minwidth: '25px',
     height: '25px',
     color: "red",
@@ -50,10 +50,9 @@ const App = () => {
     borderRadius: '20%',
     padding: '0',
     position: 'absolute',
-    top: '30px',
-    left: isSidebarOpen ? 'calc(39% - 50px)' : '15px',
+    left: isSidebarOpen ? 'calc(45% - 50px)' : '8px',
     transform: isSidebarOpen ? 'translateX(-100%)' : 'none',
-    transition: 'left 0.3s, transform 0.3s',
+    transition: 'left 0.9s, transform 0.5s',
   }}
 />
       </div>

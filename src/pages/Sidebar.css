@@ -1,9 +1,7 @@
-/* Sidebar styles */
-
 .sidebar-content {
   width: 370px;
   padding: 10px;
-  transition: width 0.2s;
+  transition: width 0.9s ease;
   position: relative;
   left: 9px;
 }
