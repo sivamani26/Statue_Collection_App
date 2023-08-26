@@ -9,7 +9,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import "./SlideUpSidebar.css";
 
 const SlideUpSideBar = () => {
-  const [showDescription, setShowDescription] = useState(true);
+  const [showDescription, setShowDescription] = useState(false);
   const [sliderPosition, setSliderPosition] = useState(0);
 
   const counts = {
