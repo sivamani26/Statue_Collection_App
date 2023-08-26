@@ -25,8 +25,8 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <Drawer anchor="left" open={isOpen} onClose={onClose} variant="persistent"   sx={{
-      '& .MuiDrawer-paper': { // Set the width of the sidebar as per your design
-        transition: '0.9s ease !important',// Add a smooth transition to the width change
+      '& .MuiDrawer-paper': { 
+        transition: '0.9s ease !important',
       },
     }}>
       <div
