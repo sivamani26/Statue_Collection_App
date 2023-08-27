@@ -1,36 +1,59 @@
-.downbar-content {
-  width: 97%;
-  padding: 10px;
-  transition: width 0.9s ease;
-  height: auto;
-  background-color: white;
-}
-
-.downbar-content.expand {
-  width: 96.44%;
-  height: auto;
-  background-color: white;
+.slider-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height:20px;
+  width: 100%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  transition: height 1s ease-in-out;
   border-radius: 20px 20px 0px 0px;
 }
 
+.slider-content {
+  padding: 10px;
+}
+
+.toggle {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #fff;
+
+}
+
+/* Slider Content Starts here */
+
+.downbar-content {
+  width: 100%;
+  padding: 10px;
+  transition: width 0.9s ease;
+  position: relative;
+  left: 9px;
+}
+
+.downbar-content.expand {
+  width: 100%;
+}
+
 .downbar-header {
-  width: 100% !important;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .css-2ulfj5-MuiTypography-root {
   line-height: 1 !important;
   letter-spacing: 0.007em;
-  width: 100%;
 }
 
 h6 {
-  width: 323px;
+  width: 10%;
   font-size: xx-small;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 550 !important;
-  top: 2px;
+  font-weight: 600 !important;
   position: relative;
+  left:0px;
   color: rgb(23, 23, 23);
 }
 
@@ -56,7 +79,9 @@ h6 {
   width: 15px;
 }
 
-.count-container:not(:last-child) {
+.count-container {
+  display: flex;
+  align-items: center;
   margin-right: 18px;
 }
 
@@ -79,117 +104,25 @@ h6 {
 /* Mobile styles */
 @media (max-width: 600px) {
   .downbar-content {
-      width: 100%;
-      left: 0;
-      padding: 5px;
+    width: 100%;
+    left: 0;
+    padding: 5px;
   }
 
   .downbar-header {
-      width: 100% !important;
+    width: 100% !important;
   }
 
   .count-container {
-      margin-right: 8px;
+    margin-right: 8px;
   }
 
   h6 {
-      width: 100%;
-      font-size: small;
+    width: 100%;
+    font-size: small;
   }
 
   .dis_details {
-      font-size: small !important;
+    font-size: small !important;
   }
-}
-
-/* SlideUpSidebar.css */
-.draggable-slider {
-  position: relative;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Hide the scrollbar */
-  border-radius: 8px;
-  margin: 20px auto;
-  left: 0px;
-  opacity: 0.8;
-  z-index: 2;
-  transform: translate(0px, 0px);
-}
-
-.downbar-content {
-  padding: 16px;
-  cursor: pointer;
-}
-
-.expand {
-  max-height: 1000px; /* Adjust as needed */
-  overflow: auto;
-}
-
-.downbar-header {
-  margin-bottom: 12px;
-}
-
-.count-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.additional-info {
-  margin-top: 12px;
-}
-
-/* ... Add more styles for the rest of your content ... */
-
-.slider-handle {
-  /* position: absolute; */
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 16px;
-  background-color: #ccc;
-  border-radius: 8px 8px 0 0;
-  cursor: grab;
-}
-
-/* Style for the slider handle while dragging */
-.slider-handle.react-draggable-dragging {
-  cursor: grabbing;
-}
-
-.draggable-slider {
-  position: relative;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Hide the scrollbar */
-  border-radius: 8px;
-  margin: 20px auto;
-  left: 0px;
-  border-radius: 20px 20px 0px 0px;
-  position: absolute;
-  opacity: 80%;
-  z-index: 2;
-  height: auto;
-  transform: translate(0px, 0px);
-}
-
-.slider {
-  position: relative;
-  left: 0;
-  right: 0;
-  background-color: white;
-  width: 100%;
-  bottom: 0;
-  display: flex;
-  border-radius: 20px 20px 0px 0px;
-  height: 200px;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #ccc;
 }
