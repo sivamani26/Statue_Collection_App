@@ -31,7 +31,8 @@ const Lakshmi = () => {
         <Link to="/">
           <Button
             variant="contained"
-            style={{ backgroundColor: "white", color: "red" }}
+            style={{color: "red" }}
+            className="back_budha_btn"
             onClick={toggleAnimation}
           >
             <KeyboardArrowLeftIcon />
