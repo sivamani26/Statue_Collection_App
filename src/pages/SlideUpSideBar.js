@@ -6,8 +6,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisStroke } from "@fortawesome/free-solid-svg-icons";
+
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 
@@ -54,7 +53,6 @@ const Slider = () => {
     >
       
       <div className="slider-container">
-          <FontAwesomeIcon icon={faEllipsisStroke} />
         <div className="toggle handle">
           <div className="slider-content" style={{ height: sliderHeight }}>
             {/* Slider_Content */}
