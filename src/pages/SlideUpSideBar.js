@@ -132,7 +132,7 @@ const Slider = () => {
                   <Typography variant="body1" className="dis_details">
                     Maitreya, also known as "Metteyya" in Pali and "Maitreya" in
                     Sanskrit, is a significant figure in Buddhism and is
-                    considered the future Buddha. According to Buddhist
+                    considered tmhe future Buddha. According to Buddhist
                     tradition, Maitreya currently resides in the Tushita heaven
                     as a bodhisattva, which is a being who has attained a high
                     level of spiritual realization but chooses to delay their
