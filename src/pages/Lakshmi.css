@@ -13,6 +13,10 @@
           z-index: 9;
 }
 
+.back_budha_btn{
+background-color: rgba(180, 180, 180, 0.421) !important;
+color:rgba(230, 139, 139, 0.331);
+}
 
 .sidebar-button {
           min-width: 40px;

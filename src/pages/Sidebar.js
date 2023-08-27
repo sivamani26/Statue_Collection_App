@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Drawer, Button, Typography, IconButton, Box, Collapse } from "@mui/material";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  Box,
+  Collapse,
+} from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
@@ -15,6 +22,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   const viewCount = 200;
 
   const handleReadMoreClick = (event) => {
+    console.log(showDescription);
     event.stopPropagation();
     setShowDescription(!showDescription);
   };
@@ -24,11 +32,17 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Drawer anchor="left" open={isOpen} onClose={onClose} variant="persistent"   sx={{
-      '& .MuiDrawer-paper': { 
-        transition: '0.9s ease !important',
-      },
-    }}>
+    <Drawer
+      anchor="left"
+      open={isOpen}
+      onClose={onClose}
+      variant="persistent"
+      sx={{
+        "& .MuiDrawer-paper": {
+          transition: "0.9s ease !important",
+        },
+      }}
+    >
       <div
         className={`sidebar-content ${showDescription ? "expand" : ""}`}
         onClick={handleContentClick}
@@ -46,7 +60,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           >
             <KeyboardArrowLeftIcon />
           </IconButton>
-          <Typography variant="h6">
+          <Typography variant="title1">
             MAITREYA BUDDHA IN GESTURE OF FEARLESSNESS (ABHAYA MUDRA)
           </Typography>
         </div>
@@ -106,12 +120,44 @@ const Sidebar = ({ isOpen, onClose }) => {
           <Typography className="title" variant="subtitle2">
             Location: National Museum
           </Typography>
-          <Typography className="description" variant="subtitle2">
-            Description:
-          </Typography>
+          <Typography variant="title1">Description:</Typography>
           <Collapse in={showDescription} collapsedSize={50}>
             <Typography variant="body1" className="dis_details">
-              Maitreya, also known as "Metteyya" in Pali and "Maitreya" in Sanskrit, is a significant figure in Buddhism and is considered the future Buddha. According to Buddhist tradition, Maitreya currently resides in the Tushita heaven as a bodhisattva, which is a being who has attained a high level of spiritual realization but chooses to delay their own enlightenment to assist others in their spiritual journey. The concept of Maitreya as a future Buddha is found in various Buddhist scriptures and sutras, including the Digha Nikaya, which is one of the collections of Buddhist texts known as the "Long Discourses" or "Long Sayings." In these texts, it is mentioned that Maitreya will succeed the current Buddha, Siddhartha Gautama (also known as Shakyamuni Buddha), as the next enlightened teacher of humanity. According to the Buddhist tradition, there are seven historical Buddhas who have already appeared in the world before Siddhartha Gautama, and Maitreya is regarded as the eighth and final Buddha of this era The Digha Nikaya also specifies that Maitreya Buddha will be born in Ketumati, a city in present-day Varanasi, Uttar Pradesh, India. When the time is right, Maitreya will descend from the Tushita heaven to be reborn on Earth and begin his final life as a human being. During this time, Maitreya will teach the Dharma (the teachings of Buddhism) and lead countless beings toward enlightenment. In Buddhist art and iconography, Maitreya is often depicted as a bodhisattva wearing ornate jewelry, including earrings, wristlets, necklaces, and an amulet. This symbolism represents his position as a bodhisattva, someone who has acquired great merit and wisdom through countless lifetimes and has chosen to remain in the cycle of rebirth to help all beings achieve liberation from suffering. The idea of Maitreya as the future Buddha serves as a source of hope and inspiration for Buddhists, as it signifies the continuation of the Buddha's teachings and the potential for enlightenment for all beings in the future. However, it is essential to note that beliefs and interpretations about Maitreya may vary across different Buddhist traditions and cultures.
+              Maitreya, also known as "Metteyya" in Pali and "Maitreya" in
+              Sanskrit, is a significant figure in Buddhism and is considered
+              the future Buddha. According to Buddhist tradition, Maitreya
+              currently resides in the Tushita heaven as a bodhisattva, which is
+              a being who has attained a high level of spiritual realization but
+              chooses to delay their own enlightenment to assist others in their
+              spiritual journey. The concept of Maitreya as a future Buddha is
+              found in various Buddhist scriptures and sutras, including the
+              Digha Nikaya, which is one of the collections of Buddhist texts
+              known as the "Long Discourses" or "Long Sayings." In these texts,
+              it is mentioned that Maitreya will succeed the current Buddha,
+              Siddhartha Gautama (also known as Shakyamuni Buddha), as the next
+              enlightened teacher of humanity. According to the Buddhist
+              tradition, there are seven historical Buddhas who have already
+              appeared in the world before Siddhartha Gautama, and Maitreya is
+              regarded as the eighth and final Buddha of this era The Digha
+              Nikaya also specifies that Maitreya Buddha will be born in
+              Ketumati, a city in present-day Varanasi, Uttar Pradesh, India.
+              When the time is right, Maitreya will descend from the Tushita
+              heaven to be reborn on Earth and begin his final life as a human
+              being. During this time, Maitreya will teach the Dharma (the
+              teachings of Buddhism) and lead countless beings toward
+              enlightenment. In Buddhist art and iconography, Maitreya is often
+              depicted as a bodhisattva wearing ornate jewelry, including
+              earrings, wristlets, necklaces, and an amulet. This symbolism
+              represents his position as a bodhisattva, someone who has acquired
+              great merit and wisdom through countless lifetimes and has chosen
+              to remain in the cycle of rebirth to help all beings achieve
+              liberation from suffering. The idea of Maitreya as the future
+              Buddha serves as a source of hope and inspiration for Buddhists,
+              as it signifies the continuation of the Buddha's teachings and the
+              potential for enlightenment for all beings in the future. However,
+              it is essential to note that beliefs and interpretations about
+              Maitreya may vary across different Buddhist traditions and
+              cultures.
             </Typography>
           </Collapse>
           <Button
@@ -122,7 +168,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               fontSize: "12px",
               textTransform: "none",
               marginBottom: "8px",
-              color: "#914900"
+              color: "#914900",
             }}
           >
             {showDescription ? "Read Less" : "Read More"}
