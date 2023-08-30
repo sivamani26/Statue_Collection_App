@@ -23,12 +23,12 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   const handleReadMoreClick = (event) => {
     console.log(showDescription);
-    event.stopPropagation();
+    //event.stopPropagation();
     setShowDescription(!showDescription);
   };
 
   const handleContentClick = (event) => {
-    event.stopPropagation();
+    //event.stopPropagation();
   };
 
   return (

@@ -28,7 +28,7 @@ const Budha = () => {
           className="buddha-image"
         />
       </div>
-      <div className={`sidebar-button-wrapper ${isSidebarOpen ? 'open' : ''}`} style={{ zIndex: 999999 }}>
+      <div className={`sidebar-button-wrapper ${isSidebarOpen ? 'open' : ''}`} style={{ zIndex: 1 }}>
       <Button
   variant="contained"
   onClick={toggleSidebar}

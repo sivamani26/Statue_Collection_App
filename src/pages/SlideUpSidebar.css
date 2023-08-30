@@ -1,37 +1,35 @@
 .slider-container {
   position: fixed;
-  z-index: 9999999;
   bottom: 0;
   left: 0;
   opacity: 75%;
   width: 100%;
   background-color: #f0f0f0;
-  overflow: hidden;
-  transition: height 1s ease-in;
+  /* overflow: hidden; */ 
+  transition: transform 0.2s ease-out;
   border-radius: 20px 20px 0px 0px;
-}
-.Toggle_styles{
-  background-color: rgb(152, 152, 152);
-  justify-content: center;
-  display: flex;
-  position: relative;
 }
 
 .slider-content {
   padding: 10px;
-}
-
-.toggle {
-  cursor: pointer;
-  text-align: center;
-  padding: 10px;
-  background-color: #ffffff;
-  color: #fff;
-
-
+  max-height: 150vh; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
 }
 
 /* Slider Content Starts here */
+
+.grip-icon {
+  position: relative;
+  top: 10px;
+  left: 50%;
+  width: 100%;
+  height: 55px;
+  bottom:0;
+  transform: translateX(-50%);
+  color:rgb(92, 92, 92);
+  padding-bottom: 0px;
+}
+
 
 .downbar-content {
   width: 100%;
@@ -56,12 +54,12 @@
 }
 
 h6 {
-  width: 15%;
-  font-size: xx-small;
+  width: 100%; /* Take full width on mobile */
+  font-size: small; /* Adjust font size for mobile */
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600 !important;
   position: relative;
-  left:0px;
+  left: 0px;
   color: rgb(23, 23, 23);
 }
 
@@ -87,12 +85,6 @@ h6 {
   width: 15px;
 }
 
-.count-container {
-  display: flex;
-  align-items: center;
-  margin-right: 18px;
-}
-
 .title {
   color: rgb(129, 129, 129) !important;
   font-size: small !important;
@@ -111,30 +103,29 @@ h6 {
 
 /* Mobile styles */
 @media (max-width: 600px) {
-  .downbar-content {
+  .sidebar-content {
     padding: 5px;
   }
-.IconButtons{
-  justify-content: center !important;
-}
-  .downbar-header {
+
+  .sidebar-header {
     width: 100% !important;
   }
+  .grip-icon {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    width: 100%;
+    height: 55px;
+    transform: translateX(-50%);
+    padding-bottom: 0px;
+  }
+  
 
   .count-container {
     margin-right: 8px;
   }
 
-  h6 {
-    width: 100%;
-    font-size: small;
-    height:auto !important;
-  }
-
   .disc_details {
     font-size: small !important;
-  }
-  .slider-content{
-    overflow:scroll;
   }
 }

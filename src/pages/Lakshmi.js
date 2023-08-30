@@ -10,7 +10,7 @@ const Lakshmi = () => {
   const [isMoving, setIsMoving] = useState(false);
 
   const toggleAnimation = () => {
-    setIsMoving(!isMoving);
+    setIsMoving(!isMoving)
   };
 
 
@@ -26,7 +26,7 @@ const Lakshmi = () => {
       </div>
       <div
         className={`Lakshmi_contianer ${isMoving ? "move-animation" : ""}`}
-        style={{ position: "absolute", top: 20, left: 20,  }}
+        style={{ position: "absolute", top: 20, left: 20 }}
       >
         <Link to="/">
           <Button
