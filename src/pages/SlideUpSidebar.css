@@ -19,18 +19,13 @@
 /* Slider Content Starts here */
 
 .grip-icon {
-  position:fixed;
+  position:relative;
+  top: 10px;
+  left: 50%;
   width: 100%;
-  height: 65px;
-  bottom:0;
-  margin: 0;
-  padding: 0;
+  height: 55px;
   transform: translateX(-50%);
   color:rgb(92, 92, 92);
-}
-
-.grip-icon svg{
-  height: 20px;
 }
 
 
