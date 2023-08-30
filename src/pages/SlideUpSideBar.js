@@ -82,7 +82,7 @@ const Slider = () => {
               {/* Heading */}
               <div className="sidebar-header">
                 <Typography variant="h6">
-                  MAHA lAKSHMI
+                  MAHA LAKSHMI
                 </Typography>
               </div>
               {/* Likes and DisLikes */}
