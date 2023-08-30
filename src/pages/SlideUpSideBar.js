@@ -6,21 +6,33 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
-
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-
+import { BsDashLg } from 'react-icons/bs';
 
 const Slider = () => {
-  const [sliderTop, setSliderTop] = useState(window.innerHeight / 2);
+  const [sliderTop, setSliderTop] = useState(window.innerHeight / 3.5);
   const [sliderHeight, setSliderHeight] = useState(window.innerHeight - 100);
   const [showDescription, setShowDescription] = useState(false);
 
 
-  const handleDrag = (_, data) => {
+  const handleDrag = (event, data) => {
+    if(event.target.type === "button" && event.type === "touchstart"){
+      console.log("event : ",event,data.node);
+      setShowDescription(!showDescription);
+    if (!showDescription) {
+      setSliderTop(100); // Set top position to 10
+      setSliderHeight(window.innerHeight - 100); // Adjust height to occupy the screen
+    } else {
+      setSliderTop(10);
+      setSliderHeight(window.innerHeight - 100); // Reset height
+    } 
+    }
+    else{
     const newTop = Math.max(data.y, 0);
     const newHeight = Math.max(window.innerHeight - newTop, 0);
     setSliderTop(newTop);
     setSliderHeight(newHeight);
+    }
   };
 
   // Dummy data for counts.
@@ -29,39 +41,46 @@ const Slider = () => {
   const viewCount = 200;
 
   const handleReadMoreClick = (event) => {
-    event.stopPropagation();
     setShowDescription(!showDescription);
     if (!showDescription) {
-      setSliderTop(10); // Set top position to 10
-      setSliderHeight(window.innerHeight - 10); // Adjust height to occupy the screen
+      setSliderTop(10);
+      setSliderHeight(window.innerHeight - 100);
     } else {
-      setSliderTop(100); // Reset top position
-      setSliderHeight(window.innerHeight - 100); // Reset height
+      setSliderTop(10);
+      setSliderHeight(window.innerHeight - 100);
     }
   };
 
+
   const handleContentClick = (event) => {
-    event.stopPropagation();
+    console.log("content clicked");
+    // event.stopPropagation();
   };
 
   return (
+    <div>
     <Draggable
       axis="y"
-      bounds={{ top: showDescription ?  10 : 100, bottom: 180 }}
+      bounds={{ top: showDescription ? 0: 50, bottom: 180 }}
       position={{ x: 0, y: sliderTop }}
       onDrag={handleDrag}
+      onStart={handleDrag}
+      onStop={handleDrag}
     >
-      
-      <div className="slider-container">
-        <div className="toggle handle">
-          <div className="slider-content" style={{ height: sliderHeight }}>
+
+<div className="slider-container">
+<BsDashLg className="grip-icon" />
+          <div
+            className="slider-content"
+            style={{ maxHeight: showDescription ? '90vh' : sliderHeight }}
+          >
             {/* Slider_Content */}
             <div
-              className={`downbar-content ${showDescription ? "expand" : ""}`}
+              className={`slider-content ${showDescription ? "expand" : ""}`}
               onClick={handleContentClick}
-            > 
-            {/* Heading */}
-              <div className="downbar-header">
+            >
+              {/* Heading */}
+              <div className="sidebar-header">
                 <Typography variant="h6">
                   MAHA lAKSHMI
                 </Typography>
@@ -167,20 +186,20 @@ const Slider = () => {
                     interpretations about Maitreya may vary across different
                     Buddhist traditions and cultures.
                   </Typography>
-                  </Collapse>
-                <Button
-  variant="outlined"
-  endIcon={showDescription ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-  onClick={handleReadMoreClick}
-  style={{
-    fontSize: "12px",
-              textTransform: "none",
-              marginBottom: "8px",
-              color: "#914900"
-  }}
->
-  {showDescription ? "Read Less" : "Read More"}
-</Button>
+                </Collapse>
+                <Button id="readMoreId"
+                  variant="outlined"
+                  endIcon={showDescription ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                  onClick={handleReadMoreClick}
+                  style={{
+                    fontSize: "12px",
+                    textTransform: "none",
+                    marginBottom: "8px",
+                    color: "#914900"
+                  }}
+                >
+                  {showDescription ? "Read Less" : "Read More"}
+                </Button>
 
                 <div
                   style={{ display: "flex", justifyContent: "space-evenly" }}
@@ -209,9 +228,9 @@ const Slider = () => {
               </div>
             </div>
           </div>
-        </div>
       </div>
-    </Draggable>
+      </Draggable>
+</div>
   );
 };
 
