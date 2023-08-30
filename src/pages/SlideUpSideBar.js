@@ -62,7 +62,7 @@ const Slider = () => {
     <Draggable
       axis="y"
       bounds={{ top: showDescription ? 0: 50, bottom: 180 }}
-      position={{ x: 0, y: sliderTop}}
+      position={{ x: 0, y: sliderTop }}
       onDrag={handleDrag}
       onStart={handleDrag}
       onStop={handleDrag}
@@ -72,7 +72,7 @@ const Slider = () => {
 <BsDashLg className="grip-icon" />
           <div
             className="slider-content"
-            style={{ maxHeight: showDescription ? '70vh' : '90vh' }}
+            style={{ maxHeight: showDescription ? '90vh' : sliderHeight }}
           >
             {/* Slider_Content */}
             <div
