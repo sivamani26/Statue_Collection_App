@@ -65,7 +65,7 @@ const Slider = () => {
             {/* Heading */}
               <div className="downbar-header">
                 <Typography variant="h6">
-                  MAHA lAKSHMI
+                  MAHA LAKSHMI
                 </Typography>
               </div>
               {/* Likes and DisLikes */}
